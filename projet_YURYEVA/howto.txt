@@ -1,0 +1,22 @@
+Comment faire fonctionner "Crazy Square !"? 
+Tous les fichiers nécessaires à son fonctionnement se trouvent dans ce dossier.
+Si vous êtes sur Code Blocks, cliquez sur "Ouvrir un projet existant" et sélectionnez "projet.cbp".
+Configurez simplement votre compilateur pour que les répertoires de SDL2 et de mingw soient corrects.
+
+Comment jouer ?
+Vous êtes un carré qui tente de s'échapper du trou noir ! 
+Tout d'abord, entrez n'importe quelle lettre dans la console et appuyez sur la touche Entrée pour que le jeu commence.
+Il y aura un écran noir de 3 secondes, préparez-vous ! 
+Les touches nécessaires pour déplacer le carré sont les fleches, it suffit de rester appuyé ou taper dessus. 
+Si le carré tombe dans le trou, le jeu se termine et la console affiche votre score. 
+
+Informations supplémentaires :
+* Si le carré ignore les plateformes et commence à tomber:
+vous pouvez commenter la fonction "bunny_jump" dans bunny.c et décommenter l'autre fonction "bunny_jump" qui se trouve juste au-dessus. 
+En faisant cela, le carré ne sautera plus de manière réaliste (rapide au début et ralentissant jusqu'à ce qu'il commence à tomber)
+mais il sautera à une vitesse constante (il ne devrait plus commencer à tomber de manière aléatoire). 
+
+* J'ai essayé d'écrire un Makefile mais je n'ai pas réussi à comprendre comment le faire fonctionner avec Code Block. 
+Je l'ai quand même inclus. Au cas où vous voudriez essayer ce Makefile, 
+les fichiers sources (fichiers se terminant par .c) devraient être déplacés dans un nouveau dossier nommé "src"
+et les fichiers headers (fichiers se terminant par .h) devraient être déplacés dans un nouveau dossier nommé "include". SDL2.dll doit être conservé dans le dossier général.  

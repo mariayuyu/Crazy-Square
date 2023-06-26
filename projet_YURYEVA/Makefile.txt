@@ -1,0 +1,22 @@
+CC = gcc
+CFLAGS = -Wall -I include
+LDFLAGS = -L . -lSDL2
+
+game.exe: main.o platform.o bunny.o graphicSDL.o
+	$(CC) $^ -o $@ $(LDFLAGS)
+
+main.o: src/main.c include/platform.h include/bunny.h include/graphicSDL.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
+platform.o: src/platform.c include/platform.h include/graphicSDL.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
+bunny.o: src/bunny.c include/bunny.h include/graphicSDL.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
+graphicSDL.o: src/graphicSDL.c include/graphicSDL.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
+.PHONY: clean
+clean:
+	rm -f *.o game.exe
